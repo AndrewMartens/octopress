@@ -1,13 +1,109 @@
 ---
 layout: post
-title: "test post"
+title: "Octopress Test Post"
 date: 2013-09-18 10:23
 comments: true
 categories: 
 ---
 
-This is some kind of test post.  Wheeeeee!
+It seems that I've managed to successfully deploy Octopress, and update the styling
+a bit.  Not a lot, but I wanted to tweak it a little bit.  Of course, I've probably
+completely messed it up for mobile clients, but I'll fix that later.
 
-I can't remember how to make things go below the fold, so I'm not going to worry about that for now.
+<!-- more -->
 
-Or maybe it's just the number of paragraphs?
+There's lots of things I still need to get working, so I'm going to mess around
+with them on this page until I'm happy.
+
+Things still to be done:
+
+## Styling (general):
+
+- see what it looks like without the embossing on the text in the nav bar and footer
+- base indentation is screwed up for lists (too far left)
+- make sure Disqus is using the same fonts
+
+## Content:
+
+- migrate old content:
+    - pages
+    - posts
+    - image galleries
+    - audio
+        - https://github.com/soupdiver/octopress-soundcloud
+- update outdated content
+- add commenting policy (on About page)
+- make sure you get all the images for those posts
+- and thumbnails of those images
+- and the descriptions of those images
+
+## Migration / optimization:
+
+- ensure that links for old posts are properly forwarded to their new locations
+(can be done with nginx easily; do I have any other options that would work with Dreamhost?)
+- export comments to Disqus
+- make Google re-index the site
+- improve load times; it's fast enough from localhost but will need to be < 2s on the internet
+    - this page is currently (according to Chrome): 47 requests, 597 KB transferred, 1.69 s (load: 1.17 s, DOMContentLoaded: 318 ms)
+    - index is: 16 requests, 511 KB transferred, 1.09 s (load: 542 ms, DOMContentLoaded: 251 ms)
+    - header image is an offender at 273 kB, maybe I should ditch it in favour of my hex idea
+    - http://www.eriwen.com/performance/make-octopress-fast/
+    - http://blog.jphpsf.com/2012/06/12/squeezing-octopress-for-faster-load-times
+
+## Images:
+
+- styling: remove frame
+- text overlay for images (white or black, larger font, thin lines)
+- captions for images (in attached box below, no frame) - http://blog.zerosharp.com/image-captions-for-octopress/
+- credit URL for images (small, right-align, in box)
+- lightbox - http://www.rayfaddis.com/blog/2013/08/31/octopress-boostrap-image-modal or http://www.rayfaddis.com/blog/2013/05/27/jquery-validation-with-twitter-bootstrap/
+- image galleries? - http://tritarget.org/blog/2012/05/07/integrating-photos-into-octopress-using-fancybox-and-plugin/
+
+{% img /images/test-image.png %}
+
+## Blockquotes: OK
+
+{% blockquote Paul Kurtz, The Affirmations of Humanism %}
+We affirm Humanism as a realistic alternative to theologies of despair and
+ideologies of violence and a source of rich personal significance and genuine
+satisfaction in the service to others. We believe in optimism rather than
+pessimism, hope rather than despair, learning in the place of dogma, truth
+instead of ignorance, joy rather than guilt or sin, tolerance in the place of
+fear, love instead of hatred, compassion over selfishness, beauty instead of
+ugliness, and reason rather than blind faith or irrationality. We believe in
+the fullest realization of the best and noblest that we are capable of as human
+beings.
+{% endblockquote %}
+
+## Pull quotes: OK
+
+{% pullquote %}
+Julia and I went camping in the BC southern interior the week before the May
+long weekend. {" The weather was supposed to be clear and increasingly warm "}
+– well, it was a few valleys over, where we originally had planned to go
+camping. But  on our way there, she suggested we take a particular logging
+road, and we went  exploring. After a big of driving, we located a fantastic
+site on the banks of the Similkameen River. I’d tell you where, but telling
+The Intarwebs about a great secluded camping spot isn’t exactly the best idea.
+Someone else clearly knew about it, since there were a few discarded shotgun
+shells, a bit of garbage, and a great stone firepit. The road in is definitely
+not RV friendly, but we had a fun time driving down it.
+{% endpullquote %}
+
+## Syntax highlighting:
+
+- square corners on top
+- remove gradient
+- change colour scheme to something else
+
+``` javascript Wakka wakka wakka
+function getCluster(cluster, sessions, callback) {
+  var query = { sessions: (sessions || false)};
+  request.get({
+      uri: apiUrl() + 'clusters' + '/' + cluster,
+      qs: query
+    }, processResponse.bind(null, callback)
+  );
+}
+```
+
