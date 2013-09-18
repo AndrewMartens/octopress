@@ -1,0 +1,13 @@
+---
+layout: post
+title: "test post"
+date: 2013-09-18 10:23
+comments: true
+categories: 
+---
+
+This is some kind of test post.  Wheeeeee!
+
+I can't remember how to make things go below the fold, so I'm not going to worry about that for now.
+
+Or maybe it's just the number of paragraphs?
