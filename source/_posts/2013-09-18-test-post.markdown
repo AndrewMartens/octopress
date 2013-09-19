@@ -53,13 +53,19 @@ Things still to be done:
 ## Images:
 
 - styling: remove frame
-- text overlay for images (white or black, larger font, thin lines)
+- text overlay for images (white or black, larger font, thin lines):
+    - sort of ok, but in including the width I probably messed up media queries and this probably breaks with larger images on mobile devices
+    - might need a better solution for this (hacked up _blog.scss and added image_overlay_tag.rb)
 - captions for images (in attached box below, no frame) - http://blog.zerosharp.com/image-captions-for-octopress/
 - credit URL for images (small, right-align, in box)
 - lightbox - http://www.rayfaddis.com/blog/2013/08/31/octopress-boostrap-image-modal or http://www.rayfaddis.com/blog/2013/05/27/jquery-validation-with-twitter-bootstrap/
 - image galleries? - http://tritarget.org/blog/2012/05/07/integrating-photos-into-octopress-using-fancybox-and-plugin/
 
-{% img /images/test-image.png %}
+{% img center /images/test-image.png 'img center' %}
+
+{% imgcap center /images/test-image.png 'imgcap center' %}
+
+{% imgover center /images/crossing-the-creek.jpg 1024 "It&lsquo;s a car, not a boat! (imgover center)" 'This is the alt text' %}
 
 ## Blockquotes: OK
 
@@ -82,7 +88,7 @@ Julia and I went camping in the BC southern interior the week before the May
 long weekend. {" The weather was supposed to be clear and increasingly warm "}
 – well, it was a few valleys over, where we originally had planned to go
 camping. But  on our way there, she suggested we take a particular logging
-road, and we went  exploring. After a big of driving, we located a fantastic
+road, and we went  exploring. After a bit of driving, we located a fantastic
 site on the banks of the Similkameen River. I’d tell you where, but telling
 The Intarwebs about a great secluded camping spot isn’t exactly the best idea.
 Someone else clearly knew about it, since there were a few discarded shotgun

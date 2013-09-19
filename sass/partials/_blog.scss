@@ -42,11 +42,48 @@ article {
     font-size: 2.0em; font-style: italic;
     line-height: 1.3em;
   }
-  img, video, .flash-video {
+  img, video, .flash-video, .caption-wrapper {
     @extend .flex-content;
     @extend .basic-alignment;
-    @include shadow-box;
+    //@include shadow-box;
   }
+  .caption-wrapper {
+    display: inline-block;
+    margin-bottom: 10px;
+    .caption-text {
+      background: #fff;
+      text-align: center;
+      font-size: .8em;
+      font-weight: 600;
+      color: #666;
+      display: block;
+    }
+  }
+  div.overlay-wrapper {
+    //float: left; /* important */
+    //display: inline-block;
+    //display: inline;
+    position: relative; /* important(so we can absolutely position the description div */
+  }
+  div.overlay-description {
+    position: absolute; /* absolute position (so we can position it where we want)*/
+    bottom: 0em; /* position will be on bottom */
+    left: 0em;
+    width: 100%;
+    /* styling below */
+    background-color: black;
+    font-family: $sans; //'tahoma'
+    font-size: 1.5em; //15px
+    text-align: right;
+    color: white;
+    opacity: 0.6; /* transparency */
+    filter: alpha(opacity=60); /* IE transparency */
+  }
+  p.overlay-description-content{
+    padding: 10px;
+    margin: 0px;
+  }
+
   video, .flash-video { margin: 0 auto 1.5em; }
   video { display: block; width: 100%; }
   .flash-video {
