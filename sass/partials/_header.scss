@@ -1,7 +1,7 @@
 body > header {
   margin: 0 auto;
-  min-height: 200px;
-  background: $header-bg;
+  min-height: 120px;
+  background: $header-bg image-url('eso_m78_header.png') no-repeat;
   text-align: center;
   h1 {
     display: inline-block;
@@ -17,13 +17,6 @@ body > header {
     font-size: 1em;
     color: $subtitle-color;
     font-weight: normal;
-  }
-  img {
-    max-width: 100px;
-    max-height: 100px;
-    padding-right: 30px;
-    position: relative;
-    top: 30px;
   }
 }
 

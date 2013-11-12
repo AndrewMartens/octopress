@@ -5,11 +5,11 @@
 //$header-padding-top: 1.5em;
 //$header-padding-bottom: 1.5em;
 
-//$max-width: 1350px;
+$max-width: 1280px;
 //$indented-lists: true;
 
 // Padding used for layout margins
-//$pad-min: 18px;
+$pad-min: 0px;
 //$pad-narrow: 25px;
 //$pad-medium: 35px;
 //$pad-wide: 55px;
@@ -19,3 +19,10 @@
 //$sidebar-pad-medium: 15px;
 //$sidebar-pad-wide: 20px;
 //$sidebar-width-wide: 300px;
+
+$footer-bg: $darkBrick;
+
+body > footer {
+  margin-bottom: 0px;
+  background-color: #ffffff;
+}

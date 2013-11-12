@@ -7,18 +7,17 @@ body > nav {
     @include background-clip(padding-box);
     margin: 0; padding: 0;
     .search {
-      padding: .3em .5em 0;
+      border: none;
+      padding: .5em .5em;
       font-size: .85em;
       font-family: $sans;
       line-height: 1.1em;
-      width: 95%;
-      background-color: #fff;
-      color: #222;
+      width: 80%;
+      background-color: $lightBrick;
+      color: $yellow;
       &:focus {
         color: #444;
-        border-color: #80b1df;
-        @include box-shadow(#80b1df 0 0 4px, #80b1df 0 0 3px inset);
-        background-color: #fff;
+        background-color: $white;
         outline: none;
       }
     }
